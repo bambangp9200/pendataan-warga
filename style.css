@@ -1,9 +1,15 @@
-body {
-    font-family: sans-serif;
-    padding: 20px;
-    background: #f2f2f2;
-}
-form input {
-    margin: 5px;
-    padding: 8px;
-}
+document.getElementById('form-warga').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const nik = document.getElementById('nik').value;
+    const nama = document.getElementById('nama').value;
+    const umur = document.getElementById('umur').value;
+    const alamatKTP = document.getElementById('alamat-ktp').value;
+    const alamatDomisili = document.getElementById('alamat-domisili').value;
+    
+    const li = document.createElement('li');
+    li.textContent = `NIK: ${nik} | Nama: ${nama} | Umur: ${umur} | Alamat KTP: ${alamatKTP} | Alamat Domisili: ${alamatDomisili}`;
+    
+    document.getElementById('daftar-warga').appendChild(li);
+    this.reset();
+});
